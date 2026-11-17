@@ -6,14 +6,16 @@
 :root {
   --bg: #111110; --panel: #1a1a18; --text: #efeee9; --muted: #999891;
   --line: #33332f; --accent: #F0C85A; --max: 1440px;
-  animation: accent-cycle 75s linear infinite;
+  animation: accent-cycle 25s linear infinite;
 }
 @keyframes accent-cycle {
-  0%, 100% { --accent: #F0C85A; } /* gold */
-  20% { --accent: #8FCB78; }      /* green */
-  40% { --accent: #ED91B9; }      /* pink */
-  60% { --accent: #B39AF5; }      /* purple */
-  80% { --accent: #78BDF2; }      /* blue */
+  /* Hold each colour, then transition to the next in about one second. */
+  0%, 16% { --accent: #F0C85A; }  /* gold */
+  20%, 36% { --accent: #8FCB78; } /* green */
+  40%, 56% { --accent: #ED91B9; } /* pink */
+  60%, 76% { --accent: #B39AF5; } /* purple */
+  80%, 96% { --accent: #78BDF2; } /* blue */
+  100% { --accent: #F0C85A; }     /* back to gold */
 }
 @media (prefers-reduced-motion: reduce) {
   :root { animation: none; }
