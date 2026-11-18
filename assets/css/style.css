@@ -19,6 +19,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   :root { animation: none; }
+  .wordmark span { animation: none; }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -28,6 +29,15 @@ button { font: inherit; }
 .site-header { height: 82px; padding: 0 5.2vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; background: rgba(17,17,16,.92); backdrop-filter: blur(14px); }
 .wordmark { font-size: 14px; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
 .wordmark span { color: var(--accent); font: 10px "DM Mono", monospace; vertical-align: top; margin-left: 3px; }
+.wordmark span { animation: wordmark-accent-cycle 25s linear infinite; }
+@keyframes wordmark-accent-cycle {
+  0%, 16% { color: #F0C85A; }
+  20%, 36% { color: #8FCB78; }
+  40%, 56% { color: #ED91B9; }
+  60%, 76% { color: #B39AF5; }
+  80%, 96% { color: #78BDF2; }
+  100% { color: #F0C85A; }
+}
 .main-nav { display: flex; gap: 34px; margin-left: auto; margin-right: 7vw; }
 .main-nav a, .header-note, .back-link { font: 10px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
 .main-nav a:hover, .main-nav a.active, .back-link:hover { color: var(--text); }
